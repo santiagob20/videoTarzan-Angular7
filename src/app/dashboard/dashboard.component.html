@@ -1,0 +1,27 @@
+<div class="container">
+
+<div class="row">
+  <div class="col s12 m6 l6">
+      <google-chart (ready)="getMovies()"
+    [title]="chart.title"
+    [type]="chart.type"
+    [data]="chart.data"
+    [columnNames]="chart.columnNames"
+    [options]="chart.options"
+    [width]="chart.width"
+    [height]="chart.height">
+  </google-chart>
+  </div>
+  <div class="col s12 m6 l6">
+      <google-chart (ready)="getMovies()"
+    [title]="chartPrice.title"
+    [type]="chartPrice.type"
+    [data]="chartPrice.data"
+    [columnNames]="chartPrice.columnNames"
+    [options]="chartPrice.options"
+    [width]="chartPrice.width"
+    [height]="chartPrice.height">
+  </google-chart>
+  </div>
+</div>
+</div>

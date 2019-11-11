@@ -1,0 +1,71 @@
+.helps{
+  cursor: pointer;
+}
+.helps:hover{
+  color: gold!important;
+}
+
+.close-card{
+  position: absolute;
+  right: 0;
+  margin-right: 23px;
+  margin-top: 10px;
+}
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #395469;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: gold;
+}
+
+#imgLogoLogin{
+    width: 20%;
+}
+
+// .input-field{
+//     width: 70%;
+// }
+
+#btnLogin,#btnCreateAccount{
+    background-color: #395469;
+    width: 100%;
+}
+
+.input-field input[type="text"]:focus + label {
+    color: gold !important;
+  }
+
+  .input-field input[type="text"]:focus {
+    border-bottom: 1px solid gold !important;
+    box-shadow: 0 1px 0 0 gold !important;
+  }
+
+  .input-field input[type="text"].valid {
+    border-bottom: 1px solid gold !important;
+    box-shadow: 0 1px 0 0 gold !important;
+  }
+
+  .input-field input[type="text"].invalid {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important;
+  }
+
+  .input-field input[type="password"]:focus + label {
+    color: gold !important;
+  }
+
+  .input-field input[type="password"]:focus {
+    border-bottom: 1px solid gold !important;
+    box-shadow: 0 1px 0 0 gold !important;
+  }
+
+  .input-field input[type="password"].valid {
+    border-bottom: 1px solid gold !important;
+    box-shadow: 0 1px 0 0 gold !important;
+  }
+
+  .input-field input[type="password"].invalid {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important;
+  }

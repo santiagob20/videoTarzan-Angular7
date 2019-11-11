@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col m1 l1"></div>
+    <div class="col m5 l11">
+        <table class="striped">
+            <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Created at</th>
+                  <th>Admin permissions</th>
+                  <th>Active</th>
+                  <th>Options</th>
+              </tr>
+            </thead>
+    
+            <tbody *ngFor="let user of listUsers">
+              <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.nombre}}</td>
+                <td>{{user.usuario}}</td>
+                <td>{{user.fecha_creacion}}</td>
+                <td>{{user.admin}}</td>
+                <td>{{user.activo}}</td>
+                <td>
+                    <button class="btn waves-effect waves-light btn-small" type="button" style="margin-right: 5px;" (click)="showUserforEdit(user.id)">Edit
+                        <i class="material-icons right">edit</i>
+                      </button>
+                    <button class="btn waves-effect waves-light btn-small" type="button" (click)="deleteUser(user.id)">Delete
+                        <i class="material-icons right">delete</i>
+                      </button>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+    
+</div>

@@ -1,0 +1,83 @@
+<div id="loginContent" class="container">
+  <div class="row">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="row">
+    <div class="col m4 l4"></div>
+    <div class="col m4 l4" align=center>
+      <form (ngSubmit)="authUser()">
+        <img src="/assets/img/tarzan-logo.png" alt="Tarzan logo" id="imgLogoLogin">
+        <div class="input-field">
+          <input id="txtUsername" [(ngModel)]="user.usuario" name="usuario" type="text" class="validate">
+          <label for="txtUsername">Username</label>
+        </div>
+        <div class="input-field">
+          <input id="txtPassword" [(ngModel)]="user.clave" name="clave"  type="password" class="validate">
+          <label for="txtPassword">Password</label>
+        </div>
+        <button class="waves-effect waves-light btn" id="btnLogin" type="submit">
+          <i class="material-icons right">keyboard_arrow_right</i>Log in
+        </button>
+      </form>
+      <div class="row">
+        <p class="helps" (click)="fnShowCreateAccount(1)">Don't have an account?</p>
+        <p class="helps" (click)="fnShowForgorPass(1)">Forgot your password?</p>
+      </div>
+    </div>
+    <div class="col m4 l4">
+      <div *ngIf="showCreateAccount">
+        <div class="card">
+          <a class="close-card" (click)="fnShowCreateAccount(0)">X</a>
+          <div class="card-content">
+            <span class="card-title">Create new Account</span>
+            <!-- <form #formCreateAcc="ngForm" (ngSubmit)="createNewuser(formCreateAcc.value)"> -->
+            <form>
+              <!-- <div class="input-field"> -->
+              <div class="input-field">
+                <input id="txtNewUsername" [(ngModel)]="user.usuario" name="usuario" type="text" class="validate" >
+                <label for="txtNewUsername">Username</label>
+              </div>
+              <div class="input-field">
+                <input id="txtNewName" [(ngModel)]="user.nombre" name="nombre" type="text" class="validate" >
+                <label for="txtNewName">Full Name</label>
+              </div>
+              <div class="input-field">
+                <input id="txtNewPass" [(ngModel)]="user.clave" name="clave" type="password" class="validate" >
+                <label for="txtNewPass">Password</label>
+              </div>
+              <div class="switch">
+                <label>
+                  Standard user
+                  <input type="checkbox" [(ngModel)]="user.admin" name="admin" id="txtTypeAdmin" >
+                  <span class="lever"></span>
+                  Administrator
+                </label>
+              </div>
+              <br>
+              <button class="waves-effect waves-light btn" id="btnCreateAccount" type="submit" (click)="createNewuser()">
+                <i class="material-icons right">add</i>Create account
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showForgotpassword">
+        <div class="card">
+          <a class="close-card" (click)="fnShowForgorPass(0)">X</a>
+          <div class="card-content">
+            <span class="card-title">Recover your password</span>
+            <p>Here you can recover your password.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    background: linear-gradient(
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)
+          ),
+          url("assets/img/background.png");
+        background-size: 50%;
+        background-repeat: repeat;
+      
+}
+h1,h2,h3,h4,h5,h6,p,span{
+  color: #395469;
+}
+a{
+  color: gold!important;
+  cursor: pointer!important;
+}
+a:hover{
+  color:#395469;
+}

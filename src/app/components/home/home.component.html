@@ -1,0 +1,39 @@
+<nav>
+  <div class="nav-wrapper">
+    <a data-target="slide-out" class="sidenav-trigger "><i class="material-icons">menu</i></a>
+    <a href="/home" class="brand-logo center"><img src="assets/img/tarzan-logo.png" alt="Logo Tarzan"
+        style="width: 50px; margin: 7px 0px 0px 0;"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a style="color: whitesmoke!important;">{{user.nombre}}</a></li>
+      <li (click)="logout()"><a style="color: whitesmoke!important;">Log out<i
+            class="material-icons right">exit_to_app</i></a></li>
+    </ul>
+  </div>
+</nav>
+<ul id="slide-out" class="sidenav  sidenav-fixed">
+  <li (click)="navigate(1)"><a style="color: whitesmoke!important;"><i class="material-icons">house</i>Home</a></li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li><a style="color: whitesmoke!important;" class="subheader">Movies</a></li>
+  <li (click)="navigate(2)"><a style="color: whitesmoke!important;"><i class="material-icons">local_movies</i>Catalogue</a></li>
+  <li (click)="navigate(3)" *ngIf="user.admin"><a style="color: whitesmoke!important;"><i class="material-icons">mode_edit</i>Edit movies</a>
+  </li>
+  <div *ngIf="user.admin">
+    <li>
+      <div style="color: whitesmoke!important;" class="divider"></div>
+    </li>
+    <li><a style="color: whitesmoke!important;" class="subheader">Users</a></li>
+    <li (click)="navigate(4)"><a style="color: whitesmoke!important;"><i class="material-icons">mode_edit</i>Edit Users</a></li>
+  </div>
+
+</ul>
+
+<script>
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+</script>
+<app-dashboard *ngIf="this.showHome"></app-dashboard>
+<app-movie-list *ngIf="this.showCatalogue"></app-movie-list>
+<app-edit-movies *ngIf="this.showEditMovies"></app-edit-movies>
+<app-edit-users *ngIf="this.showEditUsers"></app-edit-users>

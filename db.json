@@ -1,0 +1,138 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "El sexto sentido",
+      "descripcion": "Malcolm Crowe es un psicólogo infantil que vive obsesionado por el recuerdo de un joven al que fue incapaz de ayudar. Cuando conoce a Cole, un aterrorizado y confuso niño de ocho años, se le presenta la oportunidad de redimirse haciendo todo lo posible por ayudarlo.",
+      "url_imagen": "assets/img/sexto_sentido.jpeg",
+      "lista_actores": [
+        "Halley Joel Osment",
+        "Bruce Willis",
+        "Toni Collette"
+      ],
+      "director": "M. Night Shyamalan",
+      "costo_alquiler": "3800",
+      "stock": 14
+    },
+    {
+      "id": 2,
+      "titulo": "Pulp Fiction",
+      "descripcion": "La vida de un boxeador, dos sicarios, la esposa de un gánster y dos bandidos se entrelaza en una historia de violencia y redención.",
+      "url_imagen": "assets/img/pulp_fiction.png",
+      "lista_actores": [
+        "John travolta",
+        "Samuel L Jackson"
+      ],
+      "director": "Tarantino",
+      "costo_alquiler": 8000,
+      "stock": 17
+    },
+    {
+      "id": 3,
+      "titulo": "Avengers Infinity war",
+      "descripcion": "Los superhéroes se alían para vencer al poderoso Thanos, el peor enemigo al que se han enfrentado. Si Thanos logra reunir las seis gemas del infinito: poder, tiempo, alma, realidad, mente y espacio, nadie podrá detenerlo.",
+      "url_imagen": "assets/img/avengers.jpg",
+      "lista_actores": [
+        "Robert Downey Jr.",
+        "Elizabeth Olsen",
+        "Tom Holland",
+        "Scarlett johansson"
+      ],
+      "director": "Anthony Russo",
+      "costo_alquiler": 6200,
+      "stock": 0
+    },
+    {
+      "id": 4,
+      "titulo": "300",
+      "descripcion": "En el año 480 A.C, existe un estado de guerra entre Persia, dirigida por el rey Jerjes, y Grecia. En la batalla de la Termópilas, el rey Leonidas, encabeza a sus 300 soldados en contra del ejército persa.",
+      "url_imagen": "assets/img/300.jpg",
+      "lista_actores": [
+        "Gerard Butler",
+        "lena Headey",
+        "Rodrigo Santoro",
+        "Michael Fassben"
+      ],
+      "director": "Zack Snyder",
+      "costo_alquiler": "2500",
+      "stock": 14
+    },
+    {
+      "id": 5,
+      "titulo": "El silencio de los corderos",
+      "descripcion": "Una agente en entrenamiento del FBI busca la ayuda y consejo de un brillante asesino para poder capturar a otro asesino, el doctor Hannibal Lecter, un psiquiatra que también es un psicópata violento y antropófago.",
+      "url_imagen": "assets/img/corderos.jpg",
+      "lista_actores": [
+        "Anthony Hopkins",
+        "Jodie Foster",
+        "Ted Levine",
+        "Scott Glenn"
+      ],
+      "director": "Jonathan Demme",
+      "costo_alquiler": 4800,
+      "stock": 8
+    },
+    {
+      "id": 6,
+      "titulo": "Forrest Gump",
+      "descripcion": "La simpleza e inocencia de un sureño lo impulsan a través de hechos importantes de la historia moderna de EE.UU.",
+      "url_imagen": "assets/img/forrest_gump.jpg",
+      "lista_actores": [
+        "Tom Hanks",
+        "Robin Wright",
+        "Garay Sinise",
+        "Sally Field"
+      ],
+      "director": "Robert Zemeckis",
+      "costo_alquiler": 3850,
+      "stock": 4
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Santiago Barrera",
+      "usuario": "santiagob20",
+      "clave": "61ab550f4c85a975cd46f8606ede483d8ee720a76f627773de1bc1dd8ce5fb35",
+      "fecha_creacion": "2019-11-10T19:30:12.076Z",
+      "activo": true,
+      "admin": true
+    },
+    {
+      "id": 2,
+      "nombre": "Camilo Perez",
+      "usuario": "cperez",
+      "clave": "68b4be56195d99ce0079e33ed4d653e46a17b16adefc1cd332b9e957aa0efc06",
+      "fecha_creacion": "2019-11-11T09:10:12.076Z",
+      "activo": true,
+      "admin": false
+    },
+    {
+      "fecha_creacion": "2019-11-11T02:30:32.076Z",
+      "usuario": "asalgado",
+      "nombre": "Andres Salgado",
+      "clave": "098626bd944e00f2b24bd8a04900691348d2ab16f05f6683ccf361cdec1414d0",
+      "admin": false,
+      "activo": false,
+      "id": 3
+    },
+    {
+      "fecha_creacion": "2019-11-11T18:04:13.462Z",
+      "activo": true,
+      "admin": false,
+      "usuario": "imeneses",
+      "nombre": "Ines Meneses",
+      "clave": "ee7ec4a868f7af7e9fef6a52e7e41b546264050ab3fff576e849902c18412121",
+      "id": 4
+    },
+    {
+      "fecha_creacion": "2019-11-11T18:43:58.744Z",
+      "activo": false,
+      "admin": true,
+      "usuario": "perro",
+      "nombre": "perro",
+      "clave": "34309d9fb29fef1af3f87cff7d29ee6723be339554b709d0f190563edeea4229",
+      "id": 5
+    }
+  ]
+}

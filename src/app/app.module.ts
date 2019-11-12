@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersService } from './services/users.service';
-import { UserListComponent } from './user-list/user-list.component';
 import { MovieListComponent } from './movie-list/movie-list.component'
 import { FormsModule } from '@angular/forms';
 import { GoogleChartsModule } from 'angular-google-charts';
@@ -20,7 +19,6 @@ import { EditUsersComponent } from './edit-users/edit-users.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    UserListComponent,
     MovieListComponent,
     DashboardComponent,
     EditMoviesComponent,

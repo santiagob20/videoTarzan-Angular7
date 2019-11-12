@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m4 l4" *ngFor="let movie of movies">
-      <div class="card" style="height: 402px; position: relative;">
+      <div class="card" style="height: 330px; position: relative;">
         <div class="card-image">
           <img [src]="movie.url_imagen">
           <span class="card-title" style="color: gold; font-weight: 500;">{{movie.titulo}}</span>
@@ -9,7 +9,7 @@
         <div class="card-content">
           
           
-          <p style="font-size: 12px;">{{movie.descripcion}}</p>
+          <p style="font-size: 10px;">{{movie.descripcion}}</p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Extra details<i class="material-icons right">close</i></span>
@@ -23,8 +23,10 @@
           </div>
           <div class="card-action" style="position: absolute; bottom: 0;">
               <a class="activator" style="cursor: pointer;">Details</a>
-              <a (click)="buyMovie(movie.id)">Buy</a>
-              <span style="color: red!important; font-weight: bold;" *ngIf="movie.stock==0">Sold Out</span>
+              <!-- <form> -->
+                <a (click)="buyMovie(movie.id)">Buy</a>
+              <!-- </form> -->
+              <span style="color: red!important; font-weight: bold;" *ngIf="movie.stock<1">Sold Out</span>
         </div>
       </div>
     </div>

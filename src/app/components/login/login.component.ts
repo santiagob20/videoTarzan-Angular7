@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   showForgotpassword: boolean = false;
   user: User = {
     fecha_creacion: new Date(),
-    activo: true
+    activo: true,
+    admin: true
   };
   constructor(private userService: UsersService, private router: Router) {
   }
@@ -95,7 +96,7 @@ export class LoginComponent implements OnInit {
               // alert("User logged in")
               this.router.navigate(['/home'])
             }else{
-              alert("The user isn't active, contact with the administrator")
+              alert("The user is not active, contact with the administrator")
             }
           }else{
             alert(" user or password is wrong")

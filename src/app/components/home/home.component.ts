@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +9,11 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild(DashboardComponent) dashboard;
   user: User;
   showHome: boolean = true;
   showCatalogue: boolean = false;
   showEditMovies: boolean = false;
   showEditUsers: boolean = false;
-  dataMovies:any="data";
   constructor(private router: Router) { }
 
   ngOnInit() {

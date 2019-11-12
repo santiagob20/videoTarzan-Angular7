@@ -1,3 +1,127 @@
-<p>
-  edit-movies works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col m1 l1"></div>
+    <div class="col m5 l11">
+      <br>
+      <button class="btn waves-effect waves-light btn-small" type="button" (click)="showCreateMovie(1)">Add new movie
+        <i class="material-icons right">add</i>
+      </button>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Price</th>
+            <th>Stock remainig</th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor="let movie of listMovies">
+          <tr>
+            <td>{{movie.id}}</td>
+            <td>{{movie.titulo}}</td>
+            <td>{{movie.director}}</td>
+            <td>$ {{movie.costo_alquiler}}</td>
+            <td>{{movie.stock}}</td>
+            <td>
+              <button class="btn waves-effect waves-light btn-small" type="button" style="margin-right: 5px;"
+                (click)="showMovieforEdit(movie.id)">Edit
+                <i class="material-icons right">edit</i>
+              </button>
+              <button class="btn waves-effect waves-light btn-small" type="button"
+                (click)="deleteMovie(movie.id)">Delete
+                <i class="material-icons right">delete</i>
+              </button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <!------------------- CARD FOR EDITING MOVIE--------------------->
+      <div class="card" *ngIf="showCardEdit">
+        <div class="card-content">
+          <span class="card-title">Edit the movie</span>
+          <form>
+            <div class="input-field">
+              <input [(ngModel)]="movie.titulo" id="txtTitulo" name="titulo" type="text" class="validate"
+                value="{{movie.titulo}}">
+              <label class="active" for="txtTitulo">Title</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.descripcion" id="txtDescr" name="descripcion" type="text" class="validate"
+                value="{{movie.descripcion}}">
+              <label class="active" for="txtDescr">Description</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.director" id="txtDirector" name="director" type="text" class="validate"
+                value="{{movie.director}}">
+              <label class="active" for="txtDirector">Director</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.costo_alquiler" id="txtPrice" name="costo_alquiler" type="text" class="validate"
+                value="{{movie.costo_alquiler}}">
+              <label class="active" for="txtPrice">Price</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.stock" id="txtStock" name="stock" type="text" class="validate"
+                value="{{movie.stock}}">
+              <label class="active" for="txtStock">Stock</label>
+            </div>
+
+            <button class="btn waves-effect waves-light btn-small" type="button" (click)="editMovie(movie)">Save changes
+              <i class="material-icons right">save</i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+      <!------------------- CARD FOR ADD A MOVIE--------------------->
+      <div class="card" *ngIf="showCardAdd">
+        <div class="card-content">
+          <span class="card-title">Add new movie</span>
+          <form>
+            <div class="input-field">
+              <input [(ngModel)]="movie.titulo" id="txtTitulo" name="titulo" type="text" class="validate">
+              <label for="txtTitulo">Title</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.descripcion" id="txtDescr" name="descripcion" type="text" class="validate">
+              <label for="txtDescr">Description</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.director" id="txtDirector" name="director" type="text" class="validate">
+              <label for="txtDirector">Director</label>
+            </div>
+            <!-- <div class="input-field">
+              <input [(ngModel)]="movie.lista_actores" id="txtActores" name="director" type="text" class="validate"
+                value="{{movie.director}}">
+              <label for="txtActores">Actors (split by comma)</label>
+            </div> -->
+            <div class="input-field">`
+              <input [(ngModel)]="movie.url_imagen" id="txtUrl" name="url?imagen" type="text" class="validate">
+              <label for="txtUrl">Image URL</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.costo_alquiler" id="txtPrice" name="costo_alquiler" type="text" class="validate">
+              <label for="txtPrice">Price</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="movie.stock" id="txtStock" name="stock" type="text" class="validate">
+              <label for="txtStock">Stock</label>
+            </div>
+
+            <button class="btn waves-effect waves-light btn-small" type="button" (click)="addMovie()">Save changes
+              <i class="material-icons right">save</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

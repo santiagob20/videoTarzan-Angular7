@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col s12 m6 l6">
-      <google-chart (ready)="getMovies()"
+      <google-chart
     [title]="chart.title"
     [type]="chart.type"
     [data]="chart.data"
@@ -13,7 +13,7 @@
   </google-chart>
   </div>
   <div class="col s12 m6 l6">
-      <google-chart (ready)="getMovies()"
+      <google-chart
     [title]="chartPrice.title"
     [type]="chartPrice.type"
     [data]="chartPrice.data"

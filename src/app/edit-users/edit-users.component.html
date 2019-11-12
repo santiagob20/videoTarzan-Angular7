@@ -2,40 +2,97 @@
   <div class="row">
     <div class="col m1 l1"></div>
     <div class="col m5 l11">
-        <table class="striped">
-            <thead>
-              <tr>
-                  <th>id</th>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Created at</th>
-                  <th>Admin permissions</th>
-                  <th>Active</th>
-                  <th>Options</th>
-              </tr>
-            </thead>
-    
-            <tbody *ngFor="let user of listUsers">
-              <tr>
-                <td>{{user.id}}</td>
-                <td>{{user.nombre}}</td>
-                <td>{{user.usuario}}</td>
-                <td>{{user.fecha_creacion}}</td>
-                <td>{{user.admin}}</td>
-                <td>{{user.activo}}</td>
-                <td>
-                    <button class="btn waves-effect waves-light btn-small" type="button" style="margin-right: 5px;" (click)="showUserforEdit(user.id)">Edit
-                        <i class="material-icons right">edit</i>
-                      </button>
-                    <button class="btn waves-effect waves-light btn-small" type="button" (click)="deleteUser(user.id)">Delete
-                        <i class="material-icons right">delete</i>
-                      </button>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Created at</th>
+            <th>Admin permissions</th>
+            <th>Active</th>
+            <th>Options</th>
+          </tr>
+        </thead>
 
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <tbody *ngFor="let user of listUsers">
+          <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.nombre}}</td>
+            <td>{{user.usuario}}</td>
+            <td>{{user.fecha_creacion}}</td>
+            <td *ngIf="user.admin" style="color: green;"><b>{{user.admin}}</b></td>
+            <td *ngIf="!user.admin" style="color: red;"><b>{{user.admin}}</b></td>
+            <td *ngIf="user.activo" style="color: green;"><b>{{user.activo}}</b></td>
+            <td *ngIf="!user.activo" style="color: red;"><b>{{user.activo}}</b></td>
+            <td>
+              <button class="btn waves-effect waves-light btn-small" type="button" style="margin-right: 5px;"
+                (click)="showUserforEdit(user.id)">Edit
+                <i class="material-icons right">edit</i>
+              </button>
+              <button class="btn waves-effect waves-light btn-small" type="button" (click)="deleteUser(user.id)">Delete
+                <i class="material-icons right">delete</i>
+              </button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <!------------------- CARD FOR EDITING USER--------------------->
+      <div class="card" *ngIf="showCardEdit">
+        <div class="card-content">
+          <span class="card-title">Edit the user</span>
+          <form>
+            <div class="input-field">
+              <input [(ngModel)]="user.nombre" id="txtName" name="nombre" type="text" class="validate"
+                value="{{user.nombre}}">
+              <label class="active" for="txtName">Name</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="user.usuario" id="txtUserName" name="usuario" type="text" class="validate"
+                value="{{user.usuario}}">
+              <label class="active" for="txtUserName">Username</label>
+            </div>
+            <div class="input-field">
+              <input [(ngModel)]="user.clave" id="txtClave" name="clave" type="password" class="validate"
+                value="{{user.clave}}">
+              <label class="active" for="txtClave">Password</label>
+            </div>
+            <div class="row">
+              <div class="col s5 m6 l6">
+                <div class="switch">
+                  <label>
+                    Standard user
+                    <input type="checkbox" [(ngModel)]="user.admin" name="admin" id="txtTypeAdmin"
+                      value="{{user.admin}}">
+                    <span class="lever"></span>
+                    Administrator
+                  </label>
+                </div>
+              </div>
+              <div class="col s5 m6 l6">
+                <div class="switch">
+                  <label>
+                    Inactive
+                    <input type="checkbox" [(ngModel)]="user.activo" name="activo" id="txtActive"
+                      value="{{user.activo}}">
+                    <span class="lever"></span>
+                    Active
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn waves-effect waves-light btn-small" type="button" (click)="editUser(user)">Save changes
+                <i class="material-icons right">save</i>
+              </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-    
+
 </div>

@@ -12,6 +12,7 @@ export class EditUsersComponent implements OnInit {
 
   user:User;
   listUsers:any;
+  showCardEdit:boolean= false;
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
@@ -28,14 +29,18 @@ export class EditUsersComponent implements OnInit {
     )
   }
 
-  editUser(){
-    if(false){
-      console.log("123")
+  editUser(user:User){
+    if(user.nombre==""||user.usuario==""||user.clave==""){
+      alert("No blank spaces allowed")
     }else{
-      this.userService.updateUser(this.user.id,this.user).subscribe(
+      user.clave = sha256(user.clave);
+      this.userService.updateUser(user.id,user).subscribe(
         res => {
           this.user = {};
           alert("User updated succesfully")
+          this.getUsers();
+          this.showCardEdit=false;
+
         },
         err => alert("Oopss, something is wrong, try again later" + err)
       )
@@ -43,7 +48,15 @@ export class EditUsersComponent implements OnInit {
   }
 
   showUserforEdit(id){
-    alert(id)
+    // alert(id)
+    this.userService.getUser(id).subscribe(
+      res => {
+        this.user = res;
+        this.showCardEdit=true;
+      },
+      err => alert("Oopss, something is wrong, try again later" + err)
+      )
+
   }
 
   deleteUser(id){

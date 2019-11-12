@@ -9,6 +9,7 @@ import { sha256 } from 'js-sha256';
 })
 export class UsersService {
   API_URI = 'http://localhost:3000';
+  API_URI2 = 'https://videotarzan.firebaseio.com';
   constructor(private http: HttpClient) {
 
   }

@@ -36,6 +36,8 @@
           <div class="card-content">
             <span class="card-title">Create new Account</span>
             <!-- <form #formCreateAcc="ngForm" (ngSubmit)="createNewuser(formCreateAcc.value)"> -->
+
+              <!------------------ FORM CREATE USER---------------- -->
             <form>
               <!-- <div class="input-field"> -->
               <div class="input-field">
@@ -53,7 +55,7 @@
               <div class="switch">
                 <label>
                   Standard user
-                  <input type="checkbox" [(ngModel)]="user.admin" name="admin" id="txtTypeAdmin" >
+                  <input type="checkbox" [(ngModel)]="user.admin" name="admin" id="txtTypeAdmin">
                   <span class="lever"></span>
                   Administrator
                 </label>
